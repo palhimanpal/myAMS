@@ -124,7 +124,7 @@
   
         <div class="col-md-6 col-sm-12 themed-grid-col">
           <h2>Section 1</h2> <hr>
-          <form action="#" onsubmit="saveData(event)"> <!--FORMS-->
+          <form role="form" onsubmit="saveData(event);"> <!--FORMS-->
             <div class="row mb-3">
               <div class="col-md-6 col-sm-3 themed-grid-col">
                 <div class="dropdown">
@@ -265,6 +265,43 @@ const assetDetails = e =>{
   e.preventDefault();
 
 }
+
+function saveData(){
+  // function to store the data into localStorage
+  let sectionName = document.getElementById("sectionName").value,
+        purchaseReceived = document.getElementById("purchaseReceived").value,
+        itemType = document.getElementById("itemType").value,
+        subCat = document.getElementById("subCategory").value,
+        qty = document.getElementById("quantity").value,
+        company = document.getElementById("company").value,
+        dcoSN = document.getElementById("dcoSNo").value,
+        vendorSN = document.getElementById("vendorSNo").value,
+        uatDate = document.getElementById("uatDate").value;
+
+  let assetRecords = new Array(); // creating empty array
+  assetRecords=JSON.parse(localStorage.getItem("assetDetails"))?JSON.parse(localStorage.getItem("assetDetails")):[];
+  if(assetRecords.some((v)=>{return v.dcoSN==dcoSN}))
+{
+  alert("duplicate data...");
+}
+else
+{
+  assetRecords.push({
+  "sectioName": sectionName,
+  "purchaseReceived":purchaseReceived, 
+  "itemType":itemType,
+  "subCat":subCat,
+  "qty":qty,
+  "company":company,
+  "dcoSN":dcoSN,
+  "vendorSN":vendorSN,
+  "uatDate":uatDate
+})
+localStorage.setItem("assetDetails", JSON.stringify(assetRecords));
+}
+
+}
+
 </script>
 <!--
 <script src="displayTable.js"></script>
