@@ -129,7 +129,7 @@
               <div class="col-md-6 col-sm-3 themed-grid-col">
                 <div class="dropdown">
                   <label for="sectionName" style="font-weight: bold;">Section Name</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName">
                     <option selected>Section name</option>
                     <option value="1">Admin</option>
                     <option value="2">Census</option>
@@ -144,7 +144,7 @@
               <div class="col-md-6 col-sm-3 themed-grid-col">
                 <div class="dropdown">
                   <label for="purchaseReceived" style="font-weight: bold;">Purchase / Received</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived" id="purchaseReceived" >
 
                     <option value="1">Purchase</option>
                     <option value="2">Received</option>
@@ -159,7 +159,7 @@
               <div class="col-md-6 col-sm-3 themed-grid-col">
                 <div class="dropdown"> <!-- Item TYpe drop down-->
                   <label for="itemType" style="font-weight: bold;">Item Type</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType">
                    
                     <option value="1">Electronics </option>
 
@@ -170,7 +170,7 @@
               <div class="col-md-6 col-sm-3 themed-grid-col">
                 <div class="dropdown">
                   <label for="subCategory" style="font-weight: bold;">Sub-Category</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCat">
                    
                     <option value="1">Electronics </option>
 
@@ -268,6 +268,7 @@ const assetDetails = e =>{
 
 function saveData(){
   // function to store the data into localStorage
+  // defining local variable for different form fields.
   let sectionName = document.getElementById("sectionName").value,
         purchaseReceived = document.getElementById("purchaseReceived").value,
         itemType = document.getElementById("itemType").value,
@@ -279,8 +280,8 @@ function saveData(){
         uatDate = document.getElementById("uatDate").value;
 
   let assetRecords = new Array(); // creating empty array
-  assetRecords=JSON.parse(localStorage.getItem("assetDetails"))?JSON.parse(localStorage.getItem("assetDetails")):[];
-  if(assetRecords.some((v)=>{return v.dcoSN==dcoSN}))
+  assetRecords=JSON.parse(localStorage.getItem("assetDetails"))?JSON.parse(localStorage.getItem("assetDetails")):[]; // chec
+  if(assetRecords.some((v)=>{return v.dcoSN==dcoSN})) // compares value of localStorage with input value, if same then display duplicate or else push into the stack.
 {
   alert("duplicate data...");
 }
