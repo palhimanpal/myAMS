@@ -121,33 +121,31 @@
     <!--SECTION 1-->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  
-        
-          <h2>Section 1</h2> <hr>
           <form role="form" onsubmit="saveData();" autocomplete="off"> <!--FORMS-->
-            <div class="row row-cols-8">
+            <h1>Section 1</h1>
+            <div class="row row-col-2">
               <div class="col">
-                <div class="dropdown">
+                <div class="dropdown" >
                   <label for="sectionName" style="font-weight: bold;">Section Name</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName" >
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName"  required>
                     <option selected>Section name</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Census</option>
-                    <option value="3">SRS</option>
-                    <option value="4">CRS</option>
-                    <option value="5">Map</option>
-                    <option value="6">DDU</option>
-                    <option value="7">DCC</option>
+                    <option >Admin</option>
+                    <option >Census</option>
+                    <option >SRS</option>
+                    <option >CRS</option>
+                    <option >Map</option>
+                    <option >DDU</option>
+                    <option >DCC</option>
                   </select>
                 </div>
               </div>
               <div class="col">
                 <div class="dropdown">
                   <label for="purchaseReceived" style="font-weight: bold;">Purchase / Received</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived" id="purchaseReceived">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived" id="purchaseReceived" required>
 
-                    <option value="1">Purchase</option>
-                    <option value="2">Received</option>
+                    <option>Purchase</option>
+                    <option>Received</option>
 
                   </select>
                 </div>
@@ -155,43 +153,46 @@
     
             </div>
             <p  style="font-weight: bold;">Asset Details:</p>
-            <div class="row mb-3">
+            <div class="row row-col-8">
               <div class="col">
                 <div class="dropdown"> <!-- Item TYpe drop down-->
                   <label for="itemType" style="font-weight: bold;">Item Type</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType" required>
                    
-                    <option value="1">Electronics </option>
+                    <option >Electronics </option>
 
-                    <option value="2">Non-Electronics </option>
+                    <option >Non-Electronics </option>
                   </select>
                 </div>
               </div>
               <div class="col">
                 <div class="dropdown">
                   <label for="subCategory" style="font-weight: bold;">Sub-Category</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCategory">
-                   
-                    <option value="1">Electronics </option>
-
-                    <option value="2">Non-Electronics </option>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCategory" required> 
+                    <option >Electronics </option>
+                    <option >Non-Electronics </option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;">Qty.<br>
-                <input type="number" placeholder="000" name="quantity" id="quantity">
+              <div class="col" style="font-weight: bold;">
+                <label for="quantity" style="font-weight: bold;">Quantity.</label>
+                <input type="number" placeholder="000" name="quantity" id="quantity" min="0" required>
               </div>
-              <div class="col-md-6 col-sm-3 themed-grid-col" style="font-weight: bold;">Company Name <br>
-                <input type="text" placeholder="ABC" name="company" id="company">
+              <div class="col" style="font-weight: bold;">
+                <label for="quantity" style="font-weight: bold;">Company Name</label>
+                <input type="text" placeholder="ABC" name="company" id="company" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >UAT Date <br>
-                <input type="date" placeholder="01-02-2022" name="uatDate" id="uatDate" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">UAT Date</label>
+                <input type="date" placeholder="01-02-2022" name="uatDate" id="uatDate" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >DCO Sr. No.<br>
-                <input type="text" placeholder="01234566" name="dcoSNo" id="dcoSNo" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">DCO Sr. No.</label>
+                <input type="text" placeholder="01234566" name="dcoSNo" id="dcoSNo" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >Vendor Sr. No.<br>
-                <input type="text" placeholder="01246578" name="vendorSNo" id="vendorSNo" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">Vendor Sr. No.</label>
+                <input type="text" placeholder="01246578" name="vendorSNo" id="vendorSNo" required>
               </div>
             </div>
 
@@ -199,7 +200,7 @@
             <!--UPLOAD-->
             <div>
               <p> Upload supportive documents (PDF format only):</p>
-              <div class="input-group">
+              <div class="input-group" style="width: 50%;">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary" type="button" id="supportiveDoc" name="supportiveDoc">Upload</button>
               </div>
@@ -207,7 +208,7 @@
             <br>
             <div>
               <p>Download Template Excel File: </p>
-              <div class="input-group">
+              <div class="input-group" style="width: 50%;">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary" type="button" id="templateDoc" name="templateDoc">Button</button>
               </div>
@@ -297,9 +298,9 @@ function saveData(){
   let assetRecords = new Array(); // creating empty array
   assetRecords=JSON.parse(localStorage.getItem("assetDetails"))?JSON.parse(localStorage.getItem("assetDetails")):[];
   if(assetRecords.some((v)=>{return v.dcoSN==dcoSN}))
-{
-  alert("duplicate data...");
-}
+    {
+      alert("duplicate data...");
+    }
 else
 {
   assetRecords.push({
