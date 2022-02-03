@@ -11,7 +11,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    
+    <script src="displayTable.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -59,7 +60,7 @@
             </a>
           </li>
           <li>
-            <a href="signup.html" class="nav-link text-white">
+            <a href="register.html" class="nav-link text-white">
 
               Sign Up
             </a>
@@ -121,33 +122,31 @@
     <!--SECTION 1-->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  
-        <div class="col-md-6 col-sm-12 themed-grid-col">
-          <h2>Section 1</h2> <hr>
-          <form role="form" onsubmit="saveData(event);"> <!--FORMS-->
-            <div class="row mb-3">
-              <div class="col-md-6 col-sm-3 themed-grid-col">
-                <div class="dropdown">
+          <form role="form" onsubmit="saveData(); displayData(); return false;" > <!--FORMS-->
+            <h1>Section 1</h1>
+            <div class="row row-col-2">
+              <div class="col">
+                <div class="dropdown" >
                   <label for="sectionName" style="font-weight: bold;">Section Name</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName"  required>
                     <option selected>Section name</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Census</option>
-                    <option value="3">SRS</option>
-                    <option value="4">CRS</option>
-                    <option value="5">Map</option>
-                    <option value="6">DDU</option>
-                    <option value="7">DCC</option>
+                    <option >Admin</option>
+                    <option >Census</option>
+                    <option >SRS</option>
+                    <option >CRS</option>
+                    <option >Map</option>
+                    <option >DDU</option>
+                    <option >DCC</option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-3 themed-grid-col">
+              <div class="col">
                 <div class="dropdown">
                   <label for="purchaseReceived" style="font-weight: bold;">Purchase / Received</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived" id="purchaseReceived" >
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="background-color: grey; color: white;" name="purchaseReceived" id="purchaseReceived" required>
 
-                    <option value="1">Purchase</option>
-                    <option value="2">Received</option>
+                    <option>Purchase</option>
+                    <option>Received</option>
 
                   </select>
                 </div>
@@ -155,43 +154,46 @@
     
             </div>
             <p  style="font-weight: bold;">Asset Details:</p>
-            <div class="row mb-3">
-              <div class="col-md-6 col-sm-3 themed-grid-col">
+            <div class="row row-col-8">
+              <div class="col">
                 <div class="dropdown"> <!-- Item TYpe drop down-->
                   <label for="itemType" style="font-weight: bold;">Item Type</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType">
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType" required>
                    
-                    <option value="1">Electronics </option>
+                    <option >Electronics </option>
 
-                    <option value="2">Non-Electronics </option>
+                    <option >Non-Electronics </option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-3 themed-grid-col">
+              <div class="col">
                 <div class="dropdown">
                   <label for="subCategory" style="font-weight: bold;">Sub-Category</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCat">
-                   
-                    <option value="1">Electronics </option>
-
-                    <option value="2">Non-Electronics </option>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCategory" required> 
+                    <option >Electronics </option>
+                    <option >Non-Electronics </option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;">Qty.<br>
-                <input type="number" placeholder="000" name="quantity" id="quantity">
+              <div class="col" style="font-weight: bold;">
+                <label for="quantity" style="font-weight: bold;">Quantity.</label>
+                <input type="number" placeholder="000" name="quantity" id="quantity" min="0" required>
               </div>
-              <div class="col-md-6 col-sm-3 themed-grid-col" style="font-weight: bold;">Company Name <br>
-                <input type="text" placeholder="ABC" name="company" id="company">
+              <div class="col" style="font-weight: bold;">
+                <label for="quantity" style="font-weight: bold;">Company Name</label>
+                <input type="text" placeholder="ABC" name="company" id="company" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >UAT Date <br>
-                <input type="date" placeholder="01-02-2022" name="uatDate" id="uatDate" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">UAT Date</label>
+                <input type="date" placeholder="01-02-2022" name="uatDate" id="uatDate" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >DCO Sr. No.<br>
-                <input type="text" placeholder="01234566" name="dcoSNo" id="dcoSNo" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">DCO Sr. No.</label>
+                <input type="text" placeholder="01234566" name="dcoSNo" id="dcoSNo" required>
               </div>
-              <div class="col-md-6 col-sm-2 themed-grid-col" style="font-weight: bold;" >Vendor Sr. No.<br>
-                <input type="text" placeholder="01246578" name="vendorSNo" id="vendorSNo" >
+              <div class="col" style="font-weight: bold;" >
+                <label for="quantity" style="font-weight: bold;">Vendor Sr. No.</label>
+                <input type="text" placeholder="01246578" name="vendorSNo" id="vendorSNo" required>
               </div>
             </div>
 
@@ -199,7 +201,7 @@
             <!--UPLOAD-->
             <div>
               <p> Upload supportive documents (PDF format only):</p>
-              <div class="input-group">
+              <div class="input-group" style="width: 50%;">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary" type="button" id="supportiveDoc" name="supportiveDoc">Upload</button>
               </div>
@@ -207,7 +209,7 @@
             <br>
             <div>
               <p>Download Template Excel File: </p>
-              <div class="input-group">
+              <div class="input-group" style="width: 50%;">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary" type="button" id="templateDoc" name="templateDoc">Button</button>
               </div>
@@ -215,7 +217,7 @@
             <br>
             <button type="submit" class="btn btn-primary btn-lg" id="btn" value="Add">Add Asset</button>
           </form>
-        </div>
+  
       </div>
 
       
@@ -226,7 +228,6 @@
         <table class="table table-striped table-sm" id="show">
           <thead>
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Item Type</th>
               <th scope="col">Sub-Category</th>
               <th scope="col">Qty.</th>
@@ -237,6 +238,9 @@
 
             </tr>
           </thead>
+          <tbody>
+
+          </tbody>
          
         </table>
       </div>
@@ -247,24 +251,75 @@
 <!--Adding Javascript-->
 <script>
 
-const assetDetails = e =>{
-  let assetData = {
-    sectionName:document.getElementById("sectionName").value,
-    purchaseReceived: document.getElementById("purchaseReceived").value,
-    itemType : document.getElementById("itemType").value,
-    subCat : document.getElementById("subCategory").value,
-    qty : document.getElementById("quantity").value,
-    company : document.getElementById("company").value,
-    dcoSN : document.getElementById("dcoSNo").value,
-    vendorSN : document.getElementById("vendorSNo").value,
-    uatDate : document.getElementById("uatDate").value
+const assetDetails = e => {
+  
+    let sectionName = document.getElementById("sectionName").value,
+        purchaseReceived = document.getElementById("purchaseReceived").value,
+        itemType = document.getElementById("itemType").value,
+        subCat = document.getElementById("subCategory").value,
+        qty = document.getElementById("quantity").value,
+        company = document.getElementById("company").value,
+        dcoSN = document.getElementById("dcoSNo").value,
+        vendorSN = document.getElementById("vendorSNo").value,
+        uatDate = document.getElementById("uatDate").value;
 
-  }
-  localStorage.setItem('assetData', JSON.stringify(assetData));
-  console.log(localStorage.getItem('assetData'));
-  e.preventDefault();
+    let formData = JSON.parse(localStorage.getItem('formData')) || [];
 
+    let exist = formData.length &&
+      JSON.parse(localStorage.getItem('formData')).some(data =>
+        data.dcoSN.toLowerCase() == dcoSN.toLowerCase() && data.vendorSN.toLowerCase() == vendorSN.toLowerCase());
+
+    if(!exist){
+      formData.push({ sectionName, purchaseReceived, itemType, subCat, qty, company, dcoSN, vendorSN, uatDate });
+      localStorage.setItem('formData', JSON.stringify(formData));
+      document.querySelector('form').reset();
+      document.getElementById('itemType').focus();
+      alert("Asset Details added successfully. :) \n\n Try adding another...");
+    }
+    else{
+      alert("Ooops...Duplicate details !!! Try adding with new details....");
+    }
+
+    e.preventDefault();
 }
+
+/*
+function saveData(){
+  // function to store the data into localStorage
+  let sectionName = document.getElementById("sectionName").value,
+        purchaseReceived = document.getElementById("purchaseReceived").value,
+        itemType = document.getElementById("itemType").value,
+        subCat = document.getElementById("subCategory").value,
+        qty = document.getElementById("quantity").value,
+        company = document.getElementById("company").value,
+        dcoSN = document.getElementById("dcoSNo").value,
+        vendorSN = document.getElementById("vendorSNo").value,
+        uatDate = document.getElementById("uatDate").value;
+
+  let assetRecords = new Array(); // creating empty array
+  assetRecords=JSON.parse(localStorage.getItem("assetDetails"))?JSON.parse(localStorage.getItem("assetDetails")):[];
+  if(assetRecords.some((v)=>{return v.dcoSN==dcoSN}))
+    {
+      alert("duplicate data...");
+    }
+else
+{
+  assetRecords.push({
+  "sectioName": sectionName,
+  "purchaseReceived":purchaseReceived, 
+  "itemType":itemType,
+  "subCat":subCat,
+  "qty":qty,
+  "company":company,
+  "dcoSN":dcoSN,
+  "vendorSN":vendorSN,
+  "uatDate":uatDate
+})
+localStorage.setItem("assetDetails", JSON.stringify(assetRecords));
+}
+
+} 
+*/
 
 function saveData(){
   // function to store the data into localStorage
@@ -304,9 +359,6 @@ localStorage.setItem("assetDetails", JSON.stringify(assetRecords));
 }
 
 </script>
-<!--
-<script src="displayTable.js"></script>
--->
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
