@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
     <script src="displayTable.js"></script>
+    <script src="selectLogic.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -125,13 +126,13 @@
                   <label for="sectionName" style="font-weight: bold;">Section Name</label>
                   <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="sectionName" id="sectionName"  required>
                     <option selected>Section name</option>
-                    <option >Admin</option>
-                    <option >Census</option>
-                    <option >SRS</option>
-                    <option >CRS</option>
-                    <option >Map</option>
-                    <option >DDU</option>
-                    <option >DCC</option>
+                    <option value="">Admin</option>
+                    <option value="">Census</option>
+                    <option value="">SRS</option>
+                    <option value="">CRS</option>
+                    <option value="">Map</option>
+                    <option value="">DDU</option>
+                    <option value="">DCC</option>
                   </select>
                 </div>
               </div>
@@ -153,11 +154,81 @@
               <div class="col">
                 <div class="dropdown"> <!-- Item TYpe drop down-->
                   <label for="itemType" style="font-weight: bold;">Item Type</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType" required>
-                   
-                    <option >Electronics </option>
-
-                    <option >Non-Electronics </option>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="itemType" id="itemType" required> 
+                    <option  selected="selected">Select item</option>
+                    <option value="1">Table</option>
+                    <option value="2">Chair</option>
+                    <option value="3">Computer Table</option>
+                    <option value="4">Almirah</option>
+                    <option value="5">Side Rack (Small)</option>
+                    <option value="6">Steel Rack (Big)</option>
+                    <option value="7">Wall Clock</option>
+                    <option value="8">Curtains</option>
+                    <option value="9">Vertical Blinds</option>
+                    <option value="10">Roller Blinds</option>
+                    <option value="11">Foot Rest</option>
+                    <option value="12">Sofa Set (3+1+1)</option>
+                    <option value="13">Central Table</option>
+                    <option value="14">Reading Stand</option>
+                    <option value="15">Wall Paintings</option>
+                    <option value="16">Display Board</option>
+                    <option value="17">Notice Board</option>
+                    <option value="18">CPU Trolley</option>
+                    <option value="19">Steel Trolley</option>
+                    <option value="20">Godrej CD Locker New</option>
+                    <option value="21">EPBAX</option>
+                    <option value="22">Biometric Machine</option>
+                    <option value="23">Microphone Set</option>
+                    <option value="24">Conference Room Table</option>
+                    <option value="26">Conference Room Chair</option>
+                    <option value="27">Fax Machine</option>
+                    <option value="28">Photocopier (All in ONe)</option>
+                    <option value="29">Water Dispenser</option>
+                    <option value="30">Fire Extinguisher</option>
+                    <option value="31">Sand Bucket Stand</option>
+                    <option value="32">Fire Alarm System</option>
+                    <option value="33">Stool Small</option>
+                    <option value="34">Vaccume Cleaner</option>
+                    <option value="35">Storage Unit</option>
+                    <option value="36">Stablizer (4kVA)</option>
+                    <option value="37">Extension Board</option>
+                    <option value="38">Video Conference Set</option>
+                    <option value="39">Intercom</option>
+                    <option value="40">Rubber Matt (Plant Room)</option>
+                    <option value="41">Temperature Meter</option>
+                    <option value="42">File Cabinet</option>
+                    <option value="43">Side Screen</option>
+                    <option value="44">Compactor</option>
+                    <option value="45">DG Set</option>
+                    <option value="46">Inverter</option>
+                    <option value="47">Air Conditioner</option>
+                    <option value="48">Hot case</option>
+                    <option value="49">Blower Heater</option>
+                    <option value="50">Heater</option>
+                    <option value="51">Fan</option>
+                    <option value="52">Computer System</option>
+                    <option value="53">Printer</option>
+                    <option value="54">D.C.</option>
+                    <option value="55">A.D.C</option>
+                    <option value="56">A-100TB HP Nas</option>
+                    <option value="57">12-TB EMC San</option>
+                    <option value="58">Swith H.P. Procurve</option>
+                    <option value="59">Server C.P.U</option>
+                    <option value="60">Switch</option>
+                    <option value="61">HP Color Laser Jet C.P. 5225</option>
+                    <option value="62">Conica Minolta Bizhub</option>
+                    <option value="63">Wi-Fi</option>
+                    <option value="64">S.P. 1200 SF Reco</option>
+                    <option value="65">HPM 2727NF</option>
+                    <option value="66">Scanner</option>
+                    <option value="67">UPS</option>
+                    <option value="68">Projector Screen</option>
+                    <option value="69">Projector</option>
+                    <option value="70">Server Set</option>
+                    <option value="71">CPU</option>
+                    <option value="72">Monitor</option>
+                    <option value="73">Mouse</option>
+                    <option value="74">Keyboard</option>
                   </select>
                 </div>
               </div>
@@ -165,8 +236,75 @@
                 <div class="dropdown">
                   <label for="subCategory" style="font-weight: bold;">Sub-Category</label>
                   <select class="form-select form-select-sm" aria-label=".form-select-sm example" style="color: white; background-color: grey;" name="subCat" id="subCategory" required> 
-                    <option >Electronics </option>
-                    <option >Non-Electronics </option>
+                  <option value="">Select Sub-Category</option>
+                    <option value="1">Wooden Big Table</option>
+                    <option value="1">Wooden Small Table</option>
+                    <option value="1">Steel Big</option>
+                    <option value="1">Steel Small</option>
+                    <option value="1">Others</option>
+                    <option value="2">Officer Chair</option>
+                    <option value="2">Visitor Chair (Exe)</option>
+                    <option value="2">Visitor Chair (New)</option>
+                    <option value="2">Visitor Chair (Old)</option>
+                    <option value="2">Steel Chair</option>
+                    <option value="2">Operator Chair (New)</option>
+                    <option value="2">Operator Chair (Old)</option>
+                    <option value="2">Wooden Chair</option>
+                    <option value="3">Wooden Small</option>
+                    <option value="3">Wooden Medium</option>
+                    <option value="3">Godrej</option>
+                    <option value="3">Others</option>
+                    <option value="4">Steel Almirah (Big)</option>
+                    <option value="4">Steel Almirah (Small)</option>
+                    <option value="4">Wooden Almirah</option>
+                    <option value="4">Glass Almirah 
+                    </option>
+                    <option value="4">Book Shelf
+                    </option>
+                    <option value="5">Wooden Rack</option>
+                    <option value="5">Steel Rack (Old)</option>
+                    <option value="5">Steel Rack (New)</option>
+                    <option value="6">Open</option>
+                    <option value="6">Covered</option>
+                    <option value="8">Door</option>
+                    <option value="8">Partition</option>
+                    <option value="9">Large Window</option>
+                    <option value="9">Medium Window</option>
+                    <option value="23">Mike</option>
+                    <option value="23">Wall Speaker</option>
+                    <option value="23">Ceiling Speaker</option>
+                    <option value="30">ABC Type (5Kg)</option>
+                    <option value="30">Clean Agent (2Kg)</option>
+                    <option value="30">Clean Agent (4Kg)</option>
+                    <option value="30">Foam Type</option>
+                    <option value="39">Display</option>
+                    <option value="39">Normal</option>
+                    <option value="44">Double Side</option>
+                    <option value="44">Single Side</option>
+                    <option value="45">180 kVA</option>
+                    <option value="45">50 kVA</option>
+                    <option value="47">Windows AC</option>
+                    <option value="47">Split (LG)</option>
+                    <option value="47">Split (Hitachi)</option>
+                    <option value="47">Split (Carrier)</option>
+                    <option value="47">Others (Duct)</option>
+                    <option value="47">AC Plant</option>
+                    <option value="51">Wall / Table Fan</option>
+                    <option value="51">Pedestal</option>
+                    <option value="52">New (HP)</option>
+                    <option value="52">Older (Acer/Other)</option>
+                    <option value="53">4015N</option>
+                    <option value="53">HPLJ P2055dn</option>
+                    <option value="53">HPLJ P1606dn</option>
+                    <option value="53">HPLJ P1007</option>
+                    <option value="53">Laser 4050</option>
+                    <option value="53">Laser DL 1200</option>
+                    <option value="67">650VA</option>
+                    <option value="67">0.6kVA</option>
+                    <option value="67">20kVA</option>
+                    <option value="67">40kVA</option>
+                    <option value="67">50kVA</option>
+
                   </select>
                 </div>
               </div>
